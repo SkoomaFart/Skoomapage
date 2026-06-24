@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Awesome of awesomenss</title>
+    </head>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: rgb(177, 255, 167);
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            background: rgb(255, 255, 255);
+            padding: 30px;
+            max-width: 500px;
+            margin: auto;
+            text-align: justify;
+        }
+        label{
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        fieldset{
+            margin-top:20px;
+            border:2px solid #ddd;
+            border-radius:1px;
+            padding:15px;
+        }
+        input[type="text"],
+        textarea{
+            width:100%;
+            padding:10px;
+            margin-top:8px;
+            border:2px solid #ddd;
+            border-radius:10px;
+            box-sizing:border-box;
+        }
+        button{
+        background: rgb(143, 228, 168);
+        color: rgb(0, 0, 0);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        }   
+        #borgir{
+        position: fixed;
+        width: 150px;
+        height: 150px;
+        display: none;
+        pointer-events: none;
+        }   
+        #meowscarada{
+        position: fixed;
+        width: 150px;
+        height: 150px;
+        display: none;
+        pointer-events: none;
+        }
+        img{
+            display: block;
+            margin: auto;
+        }
+
+        
+    </style>
+    <body>
+
+        <form id="main">
+            <h1>Welcome am gato i eat borgir</h1>
+            <img src="https://d2zp5xs5cp8zlg.cloudfront.net/image-86754-800.jpg" height="250" width="350">
+            <p> this is me. am very cute and cuddly. pls give kisses and belly wubs</p>
+        </form>
+
+
+
+
+        <h3 style="text-align: center;"> survey yayyyyy :33 </h3>
+
+
+        <form id="googlesheet">
+            <img src="https://i.redd.it/dj8e3ngjr3lg1.jpeg" alt="ahhcat" height="100" width="100">
+            <label for="name"> Who are you traveler? </label>
+            <input type="text" name="name" id="name" required>
+            
+            <img src="https://cdn2.cdnstep.com/lrYFFUt9rM9izonjhRQH/0-1.png" alt="hapi" height="100" width="100">
+            
+            <fieldset>
+            <legend>Do you love me?</legend>
+                <label><input type="radio" name="love" value="Yes"> Yesss :3</label>
+                <label><input type="radio" name="love" value="Nyo"> Nyo >:c</label>
+            </fieldset>
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR13-9D794eS9U1Rcj03EswLi91RYALe_x26dHV4BmmI-urHshRk4ZDO6RH&s=10" alt="borgir" height="100" width="100">
+            
+            <fieldset>
+            <legend>Do you love borgir?</legend>
+                <label><input type="radio" name="loveborgir" value="Yes"> Yesss :3</label>
+                <label><input type="radio" name="loveborgir" value="Nyo"> Nyo >:c</label>
+            </fieldset>
+
+            <label for="comments">Leave a comment?</label>
+             <textarea name="comments" id="comments" rows="4"></textarea>
+
+             <button type="submit">Send!!!</button>
+
+        </form>
+        
+
+    
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzBOtubBCtyvmh2z6461sCn7OuUsBKFKrywDjz9kPxbbGJYdrfqdwFXPlSM1rZv9w/exec';
+    const form = document.getElementById('googlesheet');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault(); 
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            alert("yay it works :33");
+            form.reset();
+        })
+        .catch(error => alert('Oh nyoo error :cc', error.message));
+    });
+    </script>
+
+
+    <img id="borgir" src="https://www.pngitem.com/pimgs/m/4-40115_bacon-burger-transparent-image-food-png-images-transparent.png">
+    <img id="meowscarada" src="https://media1.tenor.com/m/BPAb05MIPjoAAAAd/meowscarada-cheese.gif">
+    
+    <script>
+    const burger = document.getElementById("borgir");
+    const meowscar = document.getElementById("meowscarada");
+
+    function borgirpop(){
+        burger.style.left = Math.random() * window.innerWidth + "px";
+        burger.style.top = Math.random() * window.innerHeight + "px";
+        burger.style.display = "block";
+        setTimeout(() => {
+            burger.style.display = "none";
+        }, 1000);
+    }
+    setInterval(borgirpop, 1111);
+
+    function meowpop(){
+        meowscar.style.left = Math.random() * window.innerWidth + "px";
+        meowscar.style.top = Math.random() * window.innerHeight + "px";
+        meowscar.style.display = "block";
+        setTimeout(() => {
+            meowscar.style.display = "none";
+        }, 1000);
+    }
+    setInterval(meowpop, 1111);
+    </script>
+    
+    
+    </body>
+</html>
